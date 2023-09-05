@@ -8,9 +8,11 @@ function esPositivo(num) {
    // Si el número es negativo ---> "Es negativo".
    // Si el número es 0, devuelve false.
    if (num > 0){
-      return ("Tu numero es positivo");
+      return ("Es positivo");
+   }else if (num == 0){
+      return false;
    }else{
-      return ("tu numero es negativo");
+      return ("Es negativo");
    }
 }
 
@@ -23,7 +25,7 @@ function agregarSimboloExclamacion(str) {
 function combinarNombres(nombre, apellido) {
    // Retorna "nombre" y "apellido" combinados en un mismo string pero separados por un espacio.
    // Ejemplo: ("Soy", "Henry") ---> "Soy Henry"
-   return (nombre + apellido);
+   return (nombre + " " + apellido);
 }
 
 function obtenerSaludo(nombre) {
@@ -58,9 +60,9 @@ function esVocal(letra) {
    // Escribe una función que reciba una letra y, si es una vocal, muestre el mensaje “Es vocal”.
    // Si el usuario ingresa un string de más de un caracter debes retornar el mensaje: "Dato incorrecto".
    // Si no es vocal, tambien debe retornar "Dato incorrecto".
-   const vocales = [a,e,i,o,u,A,E,I,O,U];
+   const vocales = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 
-   if (vocales.indexOF(letra) != -1){
+   if (vocales.indexOf(letra) != -1){
       return ("Es vocal");
    }else{
       return ("Dato incorrecto");

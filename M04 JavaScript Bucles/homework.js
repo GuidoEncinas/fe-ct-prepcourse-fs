@@ -29,7 +29,7 @@ function conection(status) {
    // De lo contrario, presumimos que el usuario está "Offline".
    // Retornar el estado de conexión del usuario.
    if (status == 1) {
-      return ("online");
+      return ("Online");
    } else if (status == 2) {
       return ("Away");
    } else {
@@ -88,7 +88,7 @@ function colors(color) {
          break;
 
       default:
-         return ("Color nor found");
+         return ("Color not found");
          break;
    }
 }
@@ -120,7 +120,7 @@ function esEntero(num) {
    // Ejemplo: 1     ---> true
    // Ejemplo: (-10) ---> true
    // De lo contrario, retorna false.
-   if (num.isInteger()) {
+   if (Number.isInteger(num)) {
       return true;
    } else {
       return false;
@@ -133,17 +133,18 @@ function fizzBuzz(num) {
    // Si "num" es divisible entre 3 y 5 (ambos), retorna "fizzbuzz".
    // De lo contrario, retorna false.
 
-   switch (num) {
+   switch (true) {
+
+      case ((num % 3 == 0) && (num % 5 == 0)):
+         return ("fizzbuzz");
+         break;
+
       case (num % 3 == 0):
          return ("fizz");
          break;
 
       case (num % 5 == 0):
          return ("buzz");
-         break;
-
-      case (num % 3 == 0) && (num % 5 == 0):
-         return ("fizzbuzz");
          break;
 
       default:
@@ -159,7 +160,11 @@ function operadoresLogicos(num1, num2, num3) {
    // Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
    // Si todos los argumentos son cero, retornar ---> "Error".
    // Si no se cumple ninguna de las condiciones anteriores, retornar false.
-   switch (num1, num2, num3) {
+   switch (true) {
+      case (num1 == 0 && num2 == 0 && num3 == 0):
+         return ("Error");
+         break;
+
       case (num1 < 0 || num2 < 0 || num3 < 0):
          return ("Hay negativos");
          break;
@@ -170,10 +175,6 @@ function operadoresLogicos(num1, num2, num3) {
 
       case (Math.max(num1, num2, num3) == num1 && num1 > 0):
          return ("Numero 1 es mayor y positivo");
-         break;
-
-      case (num1 == 0 && num2 == 0 && num3 == 0):
-         return ("Error");
          break;
 
       default:
@@ -189,11 +190,11 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
 
-   if (numero == 0 || numero == 1 || numero == 4) return false;
+   if (num == 0 || num == 1 || num == 4 || num < 0) return false;
    
-   for (let x = 2; x < numero / 2; x++) {
+   for (let x = 2; x < num / 2; x++) {
       
-      if (numero % x == 0) return false;
+      if (num % x == 0) return false;
    
    }
    
@@ -214,7 +215,7 @@ function esVerdadero(valor) {
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
-   if (num % 100 > 0){
+   if ((num / 100) >= 1 && num < 1000){
       return true;
    }else{
       return false;
@@ -233,6 +234,8 @@ function doWhile(num) {
       flag ++;
       
    } while (flag < 8);
+
+   return num;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/

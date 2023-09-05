@@ -3,7 +3,7 @@
 
 function devolverString(string) {
    // Debe retornar un string.
-   return ("El string ingresado es: " + string);
+   return (string);
 }
 
 // ⛔️ "X" e "Y" son números.
